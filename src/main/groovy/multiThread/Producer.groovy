@@ -20,26 +20,26 @@ class Producer implements Runnable {
 
     @Override
     void run() {
-        System.out.println("Producer begin")
+        println("Producer begin")
 
         String data
         Random r = new Random()
 
         try {
             while (isRunning) {
-                System.out.println("Producing...")
+                println("Producing...")
                 Thread.sleep(r.nextInt(DEFAULT_RANGE_FOR_SLEEP))
                 data = "Data:" + count.incrementAndGet()
-                System.out.println("Push data into queue：" + data)
+                println("Push data into queue：" + data)
                 if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
-                    System.out.println("Push data into queue error：" + data)
+                    println("Push data into queue error：" + data)
                 }
             }
         } catch (InterruptedException e) {
             e.printStackTrace()
             Thread.currentThread().interrupt()
         } finally {
-            System.out.println("Producer end")
+            println("Producer end")
         }
     }
 }

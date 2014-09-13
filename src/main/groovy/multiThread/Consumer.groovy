@@ -16,17 +16,17 @@ class Consumer implements Runnable {
 
     @Override
     void run() {
-        System.out.println("Consumer begin")
+        println("Consumer begin")
 
         String data
         Random r = new Random()
 
         try {
             while (isRunning) {
-                System.out.println("Consumer...")
+                println("Consumer...")
                 data = queue.poll(2, TimeUnit.SECONDS)
                 if (StringUtils.isNotEmpty(data)) {
-                    System.out.println("Pop data from queue：" + data)
+                    println("Pop data from queue：" + data)
                     Thread.sleep(r.nextInt(DEFAULT_RANGE_FOR_SLEEP))
                 } else {
                     isRunning = false
@@ -36,7 +36,7 @@ class Consumer implements Runnable {
             e.printStackTrace()
             Thread.currentThread().interrupt()
         } finally {
-            System.out.println("Consumer end")
+            println("Consumer end")
         }
     }
 }
