@@ -1,0 +1,12 @@
+*/target/*
+*.class
+*/test-output/*.settings
+.project
+.DS_Store
+**/target
+*.iml
+.idea/
+*.sql.bak
+target/*
+.settings
+.classpath
