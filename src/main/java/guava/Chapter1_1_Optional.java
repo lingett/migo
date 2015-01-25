@@ -6,7 +6,7 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
-public class Chapter1_Optional {
+public class Chapter1_1_Optional {
     public static void main(String... args) {
         List<Optional<Integer>> list = Lists.newArrayList(
                 Optional.<Integer>absent(),

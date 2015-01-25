@@ -14,7 +14,7 @@ public class FutureExample implements Callable<Integer> {
 
     public static void main(String[] args) throws InterruptedException {
         int poolSize = 10;
-        ExecutorService executor = Executors.newFixedThreadPool(10);
+        ExecutorService executor = Executors.newFixedThreadPool(poolSize);
         List<Callable<Integer>> callableList = new LinkedList<Callable<Integer>>();
 
         for (int i = 0; i < poolSize; i++) {
