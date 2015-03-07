@@ -85,6 +85,7 @@
             <version>16.0</version>
         </dependency>
 
+<<<<<<< HEAD
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib-nodep</artifactId>
@@ -97,6 +98,8 @@
             <version>0.10.4</version>
         </dependency>
 
+=======
+>>>>>>> b2b2dc61c984b6062f9fda811ada2db363b094f5
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring</artifactId>
