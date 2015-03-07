@@ -9,9 +9,11 @@
 
     <bean id="beansUtils" class="utils.BeansUtils"></bean>
 
-    <bean id="applicationListenerInstance" class="spring.application.ApplicationListenerInstance"></bean>
+    <!--<bean id="applicationListenerInstance" class="spring.application.ApplicationListenerInstance"></bean>-->
 
-	<context:annotation-config />
+    <!--<bean id="beanExample" class="spring.bean.BeanExample"></bean>-->
+
+    <context:component-scan base-package="spring"/>
 
     <aop:aspectj-autoproxy proxy-target-class="false"/>
 </beans>

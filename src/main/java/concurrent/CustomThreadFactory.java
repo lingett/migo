@@ -6,6 +6,7 @@ import lombok.Data;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
@@ -44,9 +45,24 @@ public class CustomThreadFactory implements ThreadFactory {
         public void run() {
             try {
                 TimeUnit.SECONDS.sleep(2);
+                System.out.println(Present.getInstance().v);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    static class Present {
+        public int v = (new Random()).nextInt(100);
+        private static ThreadLocal<Present> threadLocal = new ThreadLocal<Present>();
+
+        public static Present getInstance() {
+            Present instance = threadLocal.get();
+            if (instance == null) {
+                instance = new Present();
+                threadLocal.set(instance);
+            }
+            return instance;
         }
     }
 

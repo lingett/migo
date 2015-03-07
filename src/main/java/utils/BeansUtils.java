@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BeansUtils implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
@@ -25,5 +27,17 @@ public class BeansUtils implements ApplicationContextAware {
             result = beansMap.values().iterator().next();
         }
         return result;
+    }
+
+    public static void main(String... args) {
+        String str = "aabc";
+
+        String regex = ".*a";
+        Pattern pattern = Pattern.compile(regex);
+
+        Matcher matcher = pattern.matcher(str);
+        if (matcher.find()) {
+            System.out.println("found: " + matcher.group(0));
+        }
     }
 }
